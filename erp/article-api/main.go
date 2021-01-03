@@ -73,7 +73,7 @@ func main() {
 	endpoints := MakeEndpoints(svc)
 	handler := NewHTTPServer(ctx, endpoints)
 	gohandlers.CORS()
-	ch := gohandlers.CORS(gohandlers.AllowedOrigins([]string{"http://localhost:3000", "https://www.administration.remichel-cc.com"}))
+	ch := gohandlers.CORS(gohandlers.AllowedOrigins([]string{"http://localhost:3000", "https://administration.remichel-cc.com"}))
 	s := &http.Server{
 		Addr:         ":9091",
 		Handler:      ch(handler),
